@@ -1,0 +1,244 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Orbit Goods brings you everyday essentials and quality finds from around the world.">
+    <title>Orbit Goods | Everyday Finds, Worldwide</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f8f6f0;
+            color: #182438;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #142238;
+            color: #ffffff;
+            padding: 22px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            color: #e0bd78;
+            font-size: 25px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 22px;
+            font-size: 14px;
+        }
+
+        .hero {
+            min-height: 440px;
+            padding: 90px 8%;
+            display: flex;
+            align-items: center;
+            background: #eee9dc;
+        }
+
+        .hero-content {
+            max-width: 680px;
+        }
+
+        .eyebrow {
+            color: #98743a;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: clamp(38px, 6vw, 64px);
+            line-height: 1.1;
+            margin: 18px 0;
+        }
+
+        .hero p {
+            max-width: 540px;
+            color: #555c65;
+            font-size: 17px;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 28px;
+            padding: 13px 25px;
+            background: #142238;
+            color: white;
+            text-decoration: none;
+            border-radius: 3px;
+        }
+
+        section {
+            padding: 65px 8%;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .intro {
+            color: #626873;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 22px;
+            margin-top: 35px;
+        }
+
+        .feature {
+            padding: 28px 20px;
+            background: #ffffff;
+            border: 1px solid #e7e1d5;
+            border-radius: 5px;
+        }
+
+        .feature .symbol {
+            font-size: 28px;
+            color: #a68143;
+        }
+
+        .feature h3 {
+            margin: 12px 0 8px;
+        }
+
+        .feature p {
+            color: #626873;
+            font-size: 14px;
+        }
+
+        .about {
+            background: #ffffff;
+        }
+
+        footer {
+            background: #142238;
+            color: #d9dce2;
+            padding: 28px 8%;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        footer strong {
+            color: #e0bd78;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 20px 6%;
+            }
+
+            nav a {
+                margin-left: 0;
+                margin-right: 14px;
+            }
+
+            .hero {
+                padding: 65px 6%;
+            }
+
+            section {
+                padding: 50px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">ORBIT GOODS</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#collections">Our Focus</a>
+            <a href="#about">About Us</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <div class="eyebrow">Welcome to Orbit Goods</div>
+                <h1>Everyday finds.<br>A world of possibilities.</h1>
+                <p>
+                    Discover a world of useful finds and everyday essentials.
+                    We're building a brand focused on quality, thoughtful
+                    choices, and a better shopping experience.
+                </p>
+                <a class="button" href="#about">Discover Our Story</a>
+            </div>
+        </section>
+
+        <section id="collections">
+            <div class="eyebrow">The Orbit Standard</div>
+            <h2>Good finds, thoughtfully chosen.</h2>
+            <p class="intro">
+                Our goal is to make discovering practical, appealing products
+                simple, clear, and enjoyable.
+            </p>
+
+            <div class="features">
+                <article class="feature">
+                    <div class="symbol">◇</div>
+                    <h3>Everyday Essentials</h3>
+                    <p>Useful products designed to fit everyday life.</p>
+                </article>
+
+                <article class="feature">
+                    <div class="symbol">✧</div>
+                    <h3>Quality in Focus</h3>
+                    <p>A thoughtful approach to finding quality and value.</p>
+                </article>
+
+                <article class="feature">
+                    <div class="symbol">◎</div>
+                    <h3>A World of Finds</h3>
+                    <p>Exploring interesting products and new possibilities.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <div class="eyebrow">Our Story</div>
+            <h2>Welcome to Orbit Goods</h2>
+            <p class="intro">
+                Orbit Goods is an emerging online retail brand with a simple
+                vision: to help people discover everyday products worth
+                knowing about. We're at the beginning of our journey, with
+                quality, usefulness, and customer experience at the heart
+                of our plans.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <strong>ORBIT GOODS</strong>
+        <p>Everyday finds. A world of possibilities.</p>
+        <p>&copy; 2026 Orbit Goods. All rights reserved.</p>
+    </footer>
+</body>
+</html>
