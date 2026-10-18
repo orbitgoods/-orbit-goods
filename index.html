@@ -2,243 +2,687 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Orbit Goods brings you everyday essentials and quality finds from around the world.">
-    <title>Orbit Goods | Everyday Finds, Worldwide</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Orbit Goods — Everyday finds. A world of possibilities. Discover a fresh world of thoughtful finds coming soon.">
+  <title>Orbit Goods | Everyday Finds, Worldwide</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+  <style>
+    :root {
+      --navy: #101d32;
+      --navy-light: #1b2d47;
+      --gold: #c8a45d;
+      --ivory: #f8f6f0;
+      --white: #ffffff;
+      --text: #262c35;
+      --muted: #737985;
+      --line: #e9e5dc;
+    }
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f8f6f0;
-            color: #182438;
-            line-height: 1.6;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        header {
-            background: #142238;
-            color: #ffffff;
-            padding: 22px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
 
-        .logo {
-            color: #e0bd78;
-            font-size: 25px;
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.6;
+    }
 
-        nav a {
-            color: #ffffff;
-            text-decoration: none;
-            margin-left: 22px;
-            font-size: 14px;
-        }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-        .hero {
-            min-height: 440px;
-            padding: 90px 8%;
-            display: flex;
-            align-items: center;
-            background: #eee9dc;
-        }
+    .announcement {
+      background: var(--navy);
+      color: #f4e8cc;
+      text-align: center;
+      padding: 9px 16px;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
 
-        .hero-content {
-            max-width: 680px;
-        }
+    header {
+      background: rgba(255, 255, 255, 0.97);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
 
-        .eyebrow {
-            color: #98743a;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-size: 12px;
-            font-weight: bold;
-        }
+    .nav {
+      max-width: 1180px;
+      min-height: 82px;
+      margin: auto;
+      padding: 16px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
 
-        h1 {
-            font-size: clamp(38px, 6vw, 64px);
-            line-height: 1.1;
-            margin: 18px 0;
-        }
+    .brand {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: var(--navy);
+      white-space: nowrap;
+    }
 
-        .hero p {
-            max-width: 540px;
-            color: #555c65;
-            font-size: 17px;
-        }
+    .brand span {
+      color: var(--gold);
+    }
 
-        .button {
-            display: inline-block;
-            margin-top: 28px;
-            padding: 13px 25px;
-            background: #142238;
-            color: white;
-            text-decoration: none;
-            border-radius: 3px;
-        }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      font-size: 13px;
+      color: #4c5260;
+    }
 
-        section {
-            padding: 65px 8%;
-            text-align: center;
-        }
+    .nav-links a:hover {
+      color: #a6813c;
+    }
 
-        section h2 {
-            font-size: 30px;
-            margin-bottom: 12px;
-        }
+    .nav-cta {
+      border: 1px solid var(--navy);
+      padding: 10px 17px;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
 
-        .intro {
-            color: #626873;
-            max-width: 600px;
-            margin: 0 auto;
-        }
+    .nav-cta:hover {
+      background: var(--navy);
+      color: white;
+    }
 
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-            gap: 22px;
-            margin-top: 35px;
-        }
+    .hero {
+      background:
+        radial-gradient(ellipse at 85% 20%, rgba(200,164,93,0.17), transparent 35%),
+        linear-gradient(120deg, #f8f6f0 0%, #f1eee5 100%);
+      overflow: hidden;
+    }
 
-        .feature {
-            padding: 28px 20px;
-            background: #ffffff;
-            border: 1px solid #e7e1d5;
-            border-radius: 5px;
-        }
+    .hero-inner {
+      max-width: 1180px;
+      min-height: 510px;
+      margin: auto;
+      padding: 80px 28px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      gap: 50px;
+    }
 
-        .feature .symbol {
-            font-size: 28px;
-            color: #a68143;
-        }
+    .eyebrow {
+      color: #9b793b;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 11px;
+      font-weight: bold;
+      margin-bottom: 22px;
+    }
 
-        .feature h3 {
-            margin: 12px 0 8px;
-        }
+    h1 {
+      color: var(--navy);
+      font-size: clamp(42px, 5.5vw, 70px);
+      line-height: 1.08;
+      letter-spacing: -2px;
+      max-width: 650px;
+      margin-bottom: 24px;
+    }
 
-        .feature p {
-            color: #626873;
-            font-size: 14px;
-        }
+    h1 em {
+      color: #b18d4b;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: normal;
+    }
 
-        .about {
-            background: #ffffff;
-        }
+    .hero-description {
+      max-width: 470px;
+      color: #666b74;
+      font-size: 16px;
+      line-height: 1.9;
+      margin-bottom: 32px;
+    }
 
-        footer {
-            background: #142238;
-            color: #d9dce2;
-            padding: 28px 8%;
-            text-align: center;
-            font-size: 13px;
-        }
+    .button {
+      display: inline-block;
+      background: var(--navy);
+      color: white;
+      padding: 15px 25px;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      transition: background 0.2s;
+    }
 
-        footer strong {
-            color: #e0bd78;
-        }
+    .button:hover {
+      background: #293e5c;
+    }
 
-        @media (max-width: 600px) {
-            header {
-                padding: 20px 6%;
-            }
+    .text-link {
+      display: inline-block;
+      margin-left: 20px;
+      font-size: 13px;
+      font-weight: bold;
+      color: var(--navy);
+    }
 
-            nav a {
-                margin-left: 0;
-                margin-right: 14px;
-            }
+    .hero-art {
+      min-height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
 
-            .hero {
-                padding: 65px 6%;
-            }
+    .orbit-circle {
+      width: min(310px, 75vw);
+      aspect-ratio: 1;
+      border: 1px solid rgba(177,141,75,0.55);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
 
-            section {
-                padding: 50px 6%;
-            }
-        }
-    </style>
+    .orbit-circle::before,
+    .orbit-circle::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(177,141,75,0.35);
+      border-radius: 50%;
+    }
+
+    .orbit-circle::before {
+      width: 78%;
+      height: 78%;
+    }
+
+    .orbit-circle::after {
+      width: 56%;
+      height: 56%;
+    }
+
+    .orbit-core {
+      width: 115px;
+      height: 115px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      font-weight: bold;
+      box-shadow: 0 15px 45px rgba(16,29,50,0.18);
+      z-index: 1;
+    }
+
+    .orbit-dot {
+      position: absolute;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: var(--gold);
+      top: 16%;
+      right: 17%;
+      box-shadow: 0 0 0 7px rgba(200,164,93,0.12);
+    }
+
+    .section {
+      max-width: 1180px;
+      margin: auto;
+      padding: 90px 28px;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 42px;
+    }
+
+    .section-heading h2 {
+      color: var(--navy);
+      font-size: clamp(28px, 3vw, 39px);
+      line-height: 1.2;
+      margin-bottom: 15px;
+      letter-spacing: -0.7px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .collections {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .collection-card {
+      min-height: 230px;
+      background: var(--ivory);
+      border: 1px solid var(--line);
+      padding: 32px 26px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .collection-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold);
+    }
+
+    .collection-number {
+      color: var(--gold);
+      font-size: 13px;
+      letter-spacing: 2px;
+    }
+
+    .collection-card h3 {
+      color: var(--navy);
+      font-size: 22px;
+      margin: 22px 0 9px;
+    }
+
+    .collection-card p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .coming-label {
+      display: inline-block;
+      margin-top: 22px;
+      color: #8d6d32;
+      border: 1px solid #d9c59d;
+      padding: 6px 10px;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .feature-section {
+      background: var(--navy);
+      color: white;
+    }
+
+    .feature-inner {
+      max-width: 1180px;
+      margin: auto;
+      padding: 75px 28px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .feature-inner h2 {
+      font-size: clamp(30px, 4vw, 45px);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .feature-inner h2 span {
+      color: var(--gold);
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: normal;
+    }
+
+    .feature-inner p {
+      color: #d0d5df;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .feature-points {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    .feature-point {
+      border-top: 1px solid rgba(200,164,93,0.5);
+      padding-top: 17px;
+    }
+
+    .feature-point h3 {
+      color: var(--gold);
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .feature-point p {
+      font-size: 12px;
+    }
+
+    .story {
+      background: var(--ivory);
+    }
+
+    .story-inner {
+      max-width: 790px;
+      margin: auto;
+      padding: 85px 28px;
+      text-align: center;
+    }
+
+    .story-inner h2 {
+      color: var(--navy);
+      font-size: clamp(30px, 4vw, 42px);
+      margin-bottom: 20px;
+    }
+
+    .story-inner p {
+      color: #696f79;
+      font-size: 15px;
+      line-height: 2;
+      margin-bottom: 26px;
+    }
+
+    footer {
+      background: #0b1526;
+      color: #d8dce4;
+      padding: 38px 28px;
+    }
+
+    .footer-inner {
+      max-width: 1180px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-brand {
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .footer-brand span {
+      color: var(--gold);
+    }
+
+    .footer-tagline {
+      font-size: 12px;
+      color: #aeb6c4;
+      margin-top: 5px;
+    }
+
+    .footer-note {
+      color: #aeb6c4;
+      font-size: 11px;
+    }
+
+    @media (max-width: 760px) {
+      .nav {
+        padding: 16px 20px;
+        min-height: 72px;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      .brand {
+        font-size: 21px;
+      }
+
+      .nav-links {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 24px;
+        padding-top: 8px;
+        border-top: 1px solid var(--line);
+      }
+
+      .nav-cta {
+        padding: 8px 11px;
+        font-size: 10px;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        padding: 65px 24px 45px;
+        gap: 15px;
+      }
+
+      .hero-art {
+        min-height: 270px;
+      }
+
+      .orbit-circle {
+        width: 245px;
+      }
+
+      .orbit-core {
+        width: 90px;
+        height: 90px;
+        font-size: 29px;
+      }
+
+      .collections {
+        grid-template-columns: 1fr;
+      }
+
+      .collection-card {
+        min-height: 190px;
+      }
+
+      .feature-inner {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 60px 24px;
+      }
+
+      .section {
+        padding: 65px 24px;
+      }
+
+      .story-inner {
+        padding: 65px 24px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .nav-links {
+        gap: 15px;
+        font-size: 12px;
+      }
+
+      .text-link {
+        margin-left: 10px;
+      }
+
+      .feature-points {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <header>
-        <div class="logo">ORBIT GOODS</div>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#collections">Our Focus</a>
-            <a href="#about">About Us</a>
-        </nav>
-    </header>
+  <div class="announcement">
+    A new world of everyday finds is taking shape
+  </div>
 
-    <main>
-        <section class="hero" id="home">
-            <div class="hero-content">
-                <div class="eyebrow">Welcome to Orbit Goods</div>
-                <h1>Everyday finds.<br>A world of possibilities.</h1>
-                <p>
-                    Discover a world of useful finds and everyday essentials.
-                    We're building a brand focused on quality, thoughtful
-                    choices, and a better shopping experience.
-                </p>
-                <a class="button" href="#about">Discover Our Story</a>
-            </div>
-        </section>
+  <header>
+    <nav class="nav">
+      <a class="brand" href="#home">ORBIT<span> GOODS</span></a>
 
-        <section id="collections">
-            <div class="eyebrow">The Orbit Standard</div>
-            <h2>Good finds, thoughtfully chosen.</h2>
-            <p class="intro">
-                Our goal is to make discovering practical, appealing products
-                simple, clear, and enjoyable.
-            </p>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#collections">Collections</a>
+        <a href="#about">Our Story</a>
+      </div>
 
-            <div class="features">
-                <article class="feature">
-                    <div class="symbol">◇</div>
-                    <h3>Everyday Essentials</h3>
-                    <p>Useful products designed to fit everyday life.</p>
-                </article>
+      <a class="nav-cta" href="#collections">Explore Orbit</a>
+    </nav>
+  </header>
 
-                <article class="feature">
-                    <div class="symbol">✧</div>
-                    <h3>Quality in Focus</h3>
-                    <p>A thoughtful approach to finding quality and value.</p>
-                </article>
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <div>
+          <div class="eyebrow">Welcome to Orbit Goods</div>
 
-                <article class="feature">
-                    <div class="symbol">◎</div>
-                    <h3>A World of Finds</h3>
-                    <p>Exploring interesting products and new possibilities.</p>
-                </article>
-            </div>
-        </section>
+          <h1>
+            Everyday finds.<br>
+            A world of <em>possibilities.</em>
+          </h1>
 
-        <section class="about" id="about">
-            <div class="eyebrow">Our Story</div>
-            <h2>Welcome to Orbit Goods</h2>
-            <p class="intro">
-                Orbit Goods is an emerging online retail brand with a simple
-                vision: to help people discover everyday products worth
-                knowing about. We're at the beginning of our journey, with
-                quality, usefulness, and customer experience at the heart
-                of our plans.
-            </p>
-        </section>
-    </main>
+          <p class="hero-description">
+            We're building a fresh destination for discovering thoughtful
+            finds and everyday favorites. Explore our vision today and
+            stay tuned for what's coming next.
+          </p>
 
-    <footer>
-        <strong>ORBIT GOODS</strong>
-        <p>Everyday finds. A world of possibilities.</p>
-        <p>&copy; 2026 Orbit Goods. All rights reserved.</p>
-    </footer>
+          <a class="button" href="#collections">DISCOVER OUR WORLD</a>
+          <a class="text-link" href="#about">Our story &rarr;</a>
+        </div>
+
+        <div class="hero-art" aria-label="Orbit Goods brand artwork">
+          <div class="orbit-circle">
+            <div class="orbit-dot"></div>
+            <div class="orbit-core">O.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="collections">
+      <div class="section-heading">
+        <div class="eyebrow">A world to explore</div>
+        <h2>Something Worth Discovering</h2>
+        <p>
+          We're shaping our collections with care. Our first finds
+          will be revealed here soon.
+        </p>
+      </div>
+
+      <div class="collections">
+        <article class="collection-card">
+          <div>
+            <div class="collection-number">01 / THE BEGINNING</div>
+            <h3>Everyday Finds</h3>
+            <p>Useful discoveries for the moments that make up everyday life.</p>
+          </div>
+          <span class="coming-label">Collection coming soon</span>
+        </article>
+
+        <article class="collection-card">
+          <div>
+            <div class="collection-number">02 / THE DETAILS</div>
+            <h3>Thoughtful Choices</h3>
+            <p>A future selection guided by practicality, quality and value.</p>
+          </div>
+          <span class="coming-label">Collection coming soon</span>
+        </article>
+
+        <article class="collection-card">
+          <div>
+            <div class="collection-number">03 / THE POSSIBILITIES</div>
+            <h3>New Discoveries</h3>
+            <p>New ideas and interesting finds, as our world continues to grow.</p>
+          </div>
+          <span class="coming-label">Collection coming soon</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="feature-section">
+      <div class="feature-inner">
+        <div>
+          <div class="eyebrow">The Orbit approach</div>
+          <h2>Small details.<br><span>New possibilities.</span></h2>
+          <p>
+            We believe a great shopping experience starts with
+            thoughtful choices. Our goal is to build a destination
+            that's clear, welcoming and easy to explore.
+          </p>
+        </div>
+
+        <div class="feature-points">
+          <div class="feature-point">
+            <h3>Thoughtful Selection</h3>
+            <p>We aim to choose items with a clear purpose and everyday appeal.</p>
+          </div>
+
+          <div class="feature-point">
+            <h3>Quality in Focus</h3>
+            <p>Useful, well-considered finds will guide our future collections.</p>
+          </div>
+
+          <div class="feature-point">
+            <h3>A Clear Experience</h3>
+            <p>A straightforward way to discover what matters to you.</p>
+          </div>
+
+          <div class="feature-point">
+            <h3>Room to Explore</h3>
+            <p>A growing world of possibilities, one discovery at a time.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="story" id="about">
+      <div class="story-inner">
+        <div class="eyebrow">A little about us</div>
+        <h2>Welcome to Our Orbit</h2>
+        <p>
+          Orbit Goods is an emerging online retail concept built around
+          one simple idea: everyday shopping can open the door to a world
+          of possibilities. We're currently developing our first
+          collections and building the experience from the ground up.
+        </p>
+        <a class="button" href="#home">BACK TO THE TOP</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">ORBIT<span> GOODS</span></div>
+        <div class="footer-tagline">Everyday finds. A world of possibilities.</div>
+      </div>
+
+      <div class="footer-note">
+        &copy; <span id="year">2026</span> Orbit Goods. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
